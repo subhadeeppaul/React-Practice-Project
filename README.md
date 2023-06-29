@@ -1,1 +1,2 @@
-# React-Practice-Project
+# React Projects
+* [x] Profile Card
