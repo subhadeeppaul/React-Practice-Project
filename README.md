@@ -1,2 +1,2 @@
 # React Projects
-* [x] Profile Card
+* [x] 1 Profile Card
