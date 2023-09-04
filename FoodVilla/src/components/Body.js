@@ -4,15 +4,14 @@ import RestaurantCard from './RestaurantCard';
 
 function filterData(searchText, restaurants) {
   const filterData = restaurants.filter((restaurant) =>
-    restaurant.data.name.includes(searchText)
+    restaurant?.data?.name.toLowerCase().includes(searchText.toLowerCase())
   );
   return filterData;
 }
 
 const Body = () => {
+  const [searchText, setSearchText] = useState('');
   const [restaurants, setRestaurants] = useState(restaurantList);
-  //searchText is a local state variable
-  const [searchText, setSearchText] = useState(''); //To create state variables
 
   return (
     <>
@@ -42,7 +41,7 @@ const Body = () => {
       <div className='restaurant-list'>
         {restaurants.map((restaurant) => {
           return (
-            <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
+            <RestaurantCard key={restaurant.data.id} {...restaurant.data} />
           );
         })}
       </div>
